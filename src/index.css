@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --gradient-primary: linear-gradient(135deg, #14b8a6, #22c55e);
+  --gradient-hero: radial-gradient(1200px 600px at 20% 0%, oklch(0.72 0.13 180 / 25%), transparent 60%),
+                   radial-gradient(900px 500px at 80% 20%, oklch(0.78 0.15 70 / 18%), transparent 60%),
+                   linear-gradient(180deg, oklch(0.18 0.03 255), oklch(0.22 0.03 258));
+  --shadow-glow: 0 20px 60px -20px oklch(0.72 0.13 180 / 50%);
+  --shadow-card: 0 10px 30px -15px oklch(0.10 0.02 250 / 70%);
+  --shadow-danger: 0 20px 60px -20px oklch(0.66 0.22 27 / 45%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: oklch(0.18 0.03 255);
+  color: oklch(0.98 0.005 250);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: oklch(0.72 0.13 180 / 35%);
+}
+
+.glass {
+  background: linear-gradient(180deg, oklch(0.27 0.03 258 / 70%), oklch(0.23 0.03 260 / 55%));
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 6%);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-strong {
+  background: linear-gradient(180deg, oklch(0.30 0.03 258 / 85%), oklch(0.25 0.03 260 / 75%));
+  backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid oklch(1 0 0 / 8%);
+  box-shadow: var(--shadow-card);
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-hero {
+  background: var(--gradient-hero);
+}
+
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, oklch(1 0 0 / 8%), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-slow {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+}
