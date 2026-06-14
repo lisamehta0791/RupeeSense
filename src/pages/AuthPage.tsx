@@ -85,7 +85,7 @@ export default function AuthPage() {
         </form>
 
         <p style={{ marginTop: 20, textAlign: 'center', fontSize: 12, color: 'oklch(0.72 0.02 252)' }}>
-          Powered by Supabase Auth + Gemini AI
+          Powered by Supabase Auth + Groq AI
         </p>
       </div>
     </div>
